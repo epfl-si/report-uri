@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  report-uri:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: report-uri
+    container_name: report-uri
+    ports:
+      - '5050:5050'
