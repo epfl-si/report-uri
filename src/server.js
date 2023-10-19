@@ -1,9 +1,21 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
-const port = 5555;
+const port = 5050;
 
-app.get('/', (req, res) => {
-  res.send('Welcome on board!');
+app.use(bodyParser.json({ type: 'application/json' }));
+app.use(bodyParser.json({ type: 'application/csp-report' }));
+
+// Endpoint to receive CSP violation reports
+app.post('/csp-report', (req, res) => {
+  const report = req.body['csp-report'];
+  console.log('Received CSP violation report:', report);
+  res.status(200).send('Report received successfully');
+});
+
+// Return 404 to all other requests
+app.use((req, res) => {
+  res.status(404).send('Not Found');
 });
 
 app.listen(port, () => {
