@@ -7,19 +7,16 @@ RUN \
 ENV TZ="Europe/Zurich" \
     NODE_ENV="production"
 
+USER node
 WORKDIR /usr/src/app
 
 COPY --chown=node:node package*.json ./
-
-USER root
 
 RUN \
   npm ci --omit=dev && \
   npm cache clean --force
 
 COPY --chown=node:node src ./
-
-USER node
 
 EXPOSE 5050
 
