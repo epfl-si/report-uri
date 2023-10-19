@@ -1,0 +1,11 @@
+{
+  "name": "report-uri",
+  "private": true,
+  "description": "EPFL Report collection endpoint",
+  "repository": "epfl-si/report-uri",
+  "author": "Olivier Bieler <olivier.bieler@epfl.ch>",
+  "homepage": "https://github.com/epfl-si/report-uri#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
