@@ -7,5 +7,12 @@
   "homepage": "https://github.com/epfl-si/report-uri#readme",
   "engines": {
     "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-config-standard": "^17.1.0"
   }
 }
