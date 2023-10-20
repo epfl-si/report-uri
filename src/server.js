@@ -13,6 +13,7 @@ app.use(bodyParser.json({ type: 'application/csp-report' }));
 app.post('/csp-report', (req, res) => {
   const report = req.body['csp-report'];
   console.log('Received CSP violation report:', report);
+  res.header('Cross-Origin-Resource-Policy', 'cross-origin');
   res.status(200).send('Report received successfully');
 });
 
