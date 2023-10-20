@@ -26,11 +26,11 @@ set-dockerfile-dev:
 	@sed -i 's#docker-registry.default.svc:5000/wwp-test/##g' Dockerfile-dev
 
 .PHONY: build
-build:
+build: set-dockerfile-dev
 	@docker compose build
 
 .PHONY: build-force
-build-force:
+build-force: set-dockerfile-dev
 	@docker compose build --force-rm --no-cache --pull
 
 .PHONY: up
