@@ -4,7 +4,7 @@ services:
   report-uri:
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./Dockerfile-dev
     image: report-uri
     container_name: report-uri
     ports:

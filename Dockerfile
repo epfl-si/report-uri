@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM docker-registry.default.svc:5000/wwp-test/node:20-alpine
 
 RUN \
   apk update && \
