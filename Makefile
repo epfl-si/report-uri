@@ -9,6 +9,7 @@ help:
 	@echo "  make help                  — Display this help"
 	@echo "Local development:"
 	@echo "  make start                 — Launch report-uri"
+	@echo "  make send-sample-report    — Send a sample report"
 	@echo "Local production Docker:"
 	@echo "  make set-dockerfile-dev    — Prepare Dockerfile-dev"
 	@echo "  make build                 — Build report-uri"
@@ -19,6 +20,10 @@ help:
 .PHONY: start
 start:
 	@npm start
+
+.PHONY: send-sample-report
+send-sample-report:
+	@./bin/send_sample_report.sh
 
 .PHONY: set-dockerfile-dev
 set-dockerfile-dev:
