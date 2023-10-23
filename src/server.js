@@ -14,8 +14,9 @@ app.post('/csp-report', (req, res) => {
   const report = req.body['csp-report'];
   console.log('Received CSP violation report:', report);
   res.header('Cross-Origin-Resource-Policy', 'cross-origin');
-  // res.header('Content-Type', 'text/plain');
-  res.status(200).json({ report: 'received successfully' });
+  res.header('X-Content-Type-Options', 'nosniff');
+  res.header('Content-Type', 'text/plain');
+  res.status(200).send('Report received successfully');
 });
 
 // Return 404 to all other requests
