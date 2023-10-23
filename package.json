@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "nodemon src/server.js",
-    "test": "eslint ."
+    "lint": "eslint ."
   },
   "devDependencies": {
     "eslint": "^8.51.0",
