@@ -1,6 +1,7 @@
 {
   "name": "report-uri",
   "private": true,
+  "version": "0.1.0",
   "description": "EPFL Report collection endpoint",
   "repository": "epfl-si/report-uri",
   "author": "Olivier Bieler <olivier.bieler@epfl.ch>",
