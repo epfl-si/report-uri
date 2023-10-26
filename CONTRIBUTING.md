@@ -59,5 +59,5 @@ Re-Build image (build in test only)
 Promote image in production (build)
 
 ```bash
-./ansible/wpsible -t report-uri.image.promote
+./ansible/wpsible -t report-uri.image.promote --prod
 ```
