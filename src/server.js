@@ -12,7 +12,7 @@ app.use(bodyParser.json({ type: 'application/csp-report' }));
 // Endpoint to receive CSP violation reports
 app.post('/csp-report', (req, res) => {
   const report = req.body['csp-report'];
-  console.log('Received CSP violation report:', report);
+  console.log(JSON.stringify(report));
   res.header('Cross-Origin-Resource-Policy', 'cross-origin');
   res.header('X-Content-Type-Options', 'nosniff');
   res.header('Content-Type', 'text/plain');
