@@ -2,9 +2,6 @@ version: '3.2'
 
 services:
   report-uri:
-    build:
-      context: .
-      dockerfile: ./Dockerfile-dev
     image: report-uri
     container_name: report-uri
     ports:

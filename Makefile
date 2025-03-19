@@ -11,7 +11,6 @@ help:
 	@echo "  make start                 — Launch report-uri"
 	@echo "  make send-sample-report    — Send a sample report"
 	@echo "Local production Docker:"
-	@echo "  make set-dockerfile-dev    — Prepare Dockerfile-dev"
 	@echo "  make build                 — Build report-uri"
 	@echo "  make build-force           — Force build report-uri"
 	@echo "  make up                    — Brings up report-uri"
@@ -25,17 +24,12 @@ start:
 send-sample-report:
 	@./bin/send_sample_report.sh
 
-.PHONY: set-dockerfile-dev
-set-dockerfile-dev:
-	@cp Dockerfile Dockerfile-dev
-	@sed -i 's#docker-registry.default.svc:5000/wwp-test/##g' Dockerfile-dev
-
 .PHONY: build
-build: set-dockerfile-dev
+build:
 	@docker compose build
 
 .PHONY: build-force
-build-force: set-dockerfile-dev
+build-force:
 	@docker compose build --force-rm --no-cache --pull
 
 .PHONY: up
