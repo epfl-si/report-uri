@@ -1,4 +1,4 @@
-FROM docker-registry.default.svc:5000/wwp-test/node:20-alpine
+FROM quay-its.epfl.ch/svc0041/node:22-alpine
 
 RUN \
   apk update && \
