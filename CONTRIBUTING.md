@@ -1,5 +1,10 @@
 # Contributing
 
+## Prerequisites
+
+* Be member of the [Keybase] `/keybase/team/epfl_wp_prod/` team.
+* Be member of the EPFL group `vra_p_svc0041`.
+
 ## Setup
 
 ```bash
@@ -28,36 +33,28 @@ Production
 make up
 ```
 
+## Test
+
+```bash
+make send-sample-report
+```
+
 ## Deploy
 
-### Prerequisites
-
-- Access to EPFL WordPress Keybase teams (epfl_wp_test, epfl_wp_prod).
-- Access to `wwp-test` and `wwp` namespaces on our OpenShift cluster.
-- Logged in to OpenShift.
-
-Clone [wp-ops](https://github.com/epfl-si/wp-ops) repository and from there, use the `wpsible` command:
-
-Deploy in test
+Clone [wp-ops](https://github.com/epfl-si/wp-ops) repository and **from there**, use the `wpsible` command:
 
 ```bash
-./ansible/wpsible -t report-uri
+./ansible/wpsible -t report-uri      # (--prod for production environment)
 ```
 
-Deploy in production
+Start a new "cloud" build (build in test only)
 
 ```bash
-./ansible/wpsible -t report-uri --prod
+./ansible/wpsible -t report-uri.startbuild
 ```
 
-Re-Build image (build in test only)
+Restart the app
 
 ```bash
-./ansible/wpsible -t report-uri.rebuild
-```
-
-Promote image in production (build)
-
-```bash
-./ansible/wpsible -t report-uri.image.promote --prod
+./ansible/wpsible -t report-uri.restart`    # (--prod for production environment)
 ```
