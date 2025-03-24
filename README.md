@@ -1,6 +1,6 @@
 # Report URI
 
-[![Node.js](https://img.shields.io/badge/Node.js-20.x-3c873a.svg)][node20-url]
+[![Node.js](https://img.shields.io/badge/Node.js-22.x-3c873a.svg)][node22-url]
 
 ## Synospis
 
@@ -20,5 +20,5 @@ This application is designed to simply receive and monitor Content Security Poli
 
 See [Contributing](CONTRIBUTING.md).
 
-[node20-url]: https://nodejs.org/en/blog/announcements/v20-release-announce
+[node22-url]: https://nodejs.org/en/blog/announcements/v22-release-announce
 [csp-doc-url]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
